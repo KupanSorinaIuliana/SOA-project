@@ -55,7 +55,6 @@ function Create(): JSX.Element {
         }),
         body: JSON.stringify(formData)
       });
-      console.log(response);
       return response.ok;
     } catch (ex) {
       console.log(ex);
