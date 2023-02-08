@@ -28,3 +28,7 @@ The implementation was done using the instructions presented at: [Ayth0-react](h
 - The front-end project was implementation using react.
 - Exposes different options according to the login state of the user.
 - Uses microfrontends.
+
+## Database
+- The database used is Mongo DB.
+- The database is deployed in Mongo DB Atlas.
