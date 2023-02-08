@@ -4,10 +4,11 @@ import { IdeaTrackerController } from './idea-tracker.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TrackerSchema } from './schemas/tracker.schema';
 import { AuthenticationMiddleware } from 'src/common/authentication.middleware';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
   imports: [
-     MongooseModule.forFeature([{ name: 'Idea', schema: TrackerSchema }]),
+     MongooseModule.forFeature([{ name: 'Idea', schema: TrackerSchema }]),HttpModule
   ],
   providers: [IdeaTrackerService],
   controllers: [IdeaTrackerController]

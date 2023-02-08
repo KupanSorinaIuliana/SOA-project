@@ -3,10 +3,28 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Idea } from './interfaces/idea.interface';
 import { CreateIdeaDto } from './dto/create-idea.dto';
+import { HttpService } from '@nestjs/axios';
+import { firstValueFrom } from 'rxjs';
+import axios, { AxiosInstance } from 'axios';
 
 @Injectable()
 export class IdeaTrackerService {
-  constructor(@InjectModel('Idea') private readonly ideaModel: Model<Idea>) { }
+private client: AxiosInstance;
+  constructor(@InjectModel('Idea') private readonly ideaModel: Model<Idea>, private readonly httpService: HttpService,) {
+  this.client = axios.create({
+              baseURL: 'https://samples.openweathermap.org/data/2.5/',
+              params: {
+                  APPID: '503b0490d82953ffb25703d599ba44f3'
+              }
+            });
+  }
+
+async ofCity(city: string): Promise<object> {
+    const response = await this.client.get('weather', {
+      params: { q: city },
+    });
+    return response.data;
+  }
 
   async addIdea(createIdeaDTO: CreateIdeaDto): Promise<Idea> {
     const newIdea = await new this.ideaModel(createIdeaDTO);

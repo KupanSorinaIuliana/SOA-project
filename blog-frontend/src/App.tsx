@@ -5,7 +5,8 @@ import Home from './components/Home';
 import Idea from './components/post/Idea';
 import Edit from './components/post/Edit';
 import Create from './components/post/Create';
-import Profile from "./contexts/profile";
+import Weather from './components/post/Weather';
+import Profile from './contexts/profile'
 
 function App(): JSX.Element {
 
@@ -14,12 +15,13 @@ function App(): JSX.Element {
       <div className={'container'}>
       <BrowserRouter>
         <Navbar />
-        <Profile></Profile>
         <Switch>
           <Route path={"/ideas"} exact={true} component={Home} />
           <Route path={"/idea/:ideaId"} component={Idea}/>
           <Route path={"/edit/:ideaId"} component={Edit}/>
           <Route path={"/create"} component={Create} />
+          <Route path={"/weather"} component={Weather} />
+          <Route path={"/profile"} component={Profile} />
         </Switch>
         </BrowserRouter>
       </div>

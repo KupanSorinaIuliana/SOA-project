@@ -22,6 +22,9 @@ function Navbar() {
 
         <ul className="main-menu visible-on-click" id="main-menu">
             <li><Link className={"nav-link"} to={"/"}> Idea tracker </Link></li>
+            {isAuthenticated && (
+                 <li><Link className={"nav-link"} to={"/profile"}> Profile </Link></li>
+                                        )}
             <li><Link className={"nav-link"} to={"/"}>
                     {!isLoading && !user && (
                                     <LoginButton/>
@@ -41,52 +44,11 @@ function Navbar() {
                             {isAuthenticated && (
                             <li><Link className={"nav-link"} to={"/create"}> Create </Link></li>
                             )}
+                            {isAuthenticated && (
+                                  <li><Link className={"nav-link"} to={"/weather"}> Weather </Link></li>
+                                                        )}
                         </ul>
     </header>
     );
 }
 export default withRouter(Navbar);
-
-/*    return (
-        <header>
-            <div className="container-fluid position-relative no-side-padding">
-
-                <ul className="main-menu visible-on-click" id="main-menu">
-                    <li><Link className={"nav-link"} to={"/"}> Idea tracker </Link></li>
-                    <li>
-                    <Link className={"nav-link"} to={"/"}>
-                        {
-                        {!isLoading && !user && (
-                            <>
-                                <button className="btn btn-dark" onClick={() => loginWithRedirect()}>
-                                    Sign In
-                                </button>
-                            </>
-                        )}
-
-                        <LoginButton/>
-                        <LogoutButton/>
-                        !isLoading && user && (
-                            <>
-                                <div>
-                                    <label className="mr-2">{user.name}</label>
-                                    <button className="btn btn-dark" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-                                        Sign Out 
-                                    </button>
-                                </div>
-                            </>
-                        )}
-                    </Link>
-                    </li>
-                    <li><Link className={"nav-link"} to={"/"}> Home </Link></li>
-                    {isAuthenticated && (
-                    <li><Link className={"nav-link"} to={"/create"}> Create </Link></li>
-                    )}
-                </ul>
-            </div>
-        </header>
-    );
-}
-
-export default withRouter(Navbar);
- */

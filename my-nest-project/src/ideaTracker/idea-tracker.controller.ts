@@ -7,6 +7,12 @@ import { ValidateObjectId } from './shared/pipes/validate-object-id.pipes';
 export class IdeaTrackerController {
 constructor(private ideaTrackerService: IdeaTrackerService) { }
 
+    @Get('/weather')
+  async getWeather(@Res() res) {
+    const ideas = await this.ideaTrackerService.ofCity('London');
+    return res.status(HttpStatus.OK).json(ideas);
+  }
+
   // Create an idea
   @Post('/idea')
   async addIdea(@Res() res, @Body() createIdeaDTO: CreateIdeaDto) {
