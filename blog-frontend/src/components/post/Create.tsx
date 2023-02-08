@@ -15,7 +15,7 @@ function Create(): JSX.Element {
   const [author, setAuthor] = useState<string>('');
   const [values, setValues] = useState<IValues>([]);
   const [submitSuccess, setSubmitSuccess] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -34,7 +34,7 @@ function Create(): JSX.Element {
       author
     }
 
-    const submitSuccess: boolean = await submitform(formData);
+    const submitSuccess: boolean = await submitForm(formData);
     setSubmitSuccess(submitSuccess);
     setValues({...values, formData});
     setLoading(false);
@@ -43,11 +43,11 @@ function Create(): JSX.Element {
     }, 1500);
   }
 
-  const submitform = async (formData: {}) => {
+  const submitForm = async (formData: {}) => {
     try {
       const accessToken = await getIdTokenClaims();
       const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/tracker/idea`, {
-        method: "idea",
+        method: "post",
         headers: new Headers({
           "Content-Type": "application/json",
           "Accept": "application/json",
@@ -55,6 +55,7 @@ function Create(): JSX.Element {
         }),
         body: JSON.stringify(formData)
       });
+      console.log(response);
       return response.ok;
     } catch (ex) {
       console.log(ex);

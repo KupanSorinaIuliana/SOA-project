@@ -10,7 +10,7 @@ import axios, { AxiosInstance } from 'axios';
 @Injectable()
 export class IdeaTrackerService {
 private client: AxiosInstance;
-  constructor(@InjectModel('Idea') private readonly ideaModel: Model<Idea>, private readonly httpService: HttpService,) {
+  constructor(@InjectModel('Idea') private readonly ideaModel: Model<Idea>, private readonly httpService: HttpService) {
   this.client = axios.create({
               baseURL: 'https://samples.openweathermap.org/data/2.5/',
               params: {

@@ -6,7 +6,7 @@ import { IdeaTrackerModule } from './ideaTracker/idea-tracker.module';
 
 @Module({
   imports: [
-      MongooseModule.forRoot('mongodb://localhost/soa', { useNewUrlParser: true }),
+      MongooseModule.forRoot('mongodb+srv://sorina:%40N!r0%2410%2B1@bigdata.41058td.mongodb.net/test', { useNewUrlParser: true }),
       IdeaTrackerModule
   ],
   controllers: [AppController],
