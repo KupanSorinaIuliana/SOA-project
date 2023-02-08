@@ -18,32 +18,21 @@ function Idea() {
   }, [ideaID]);
 
     return (
-        <section className="post-area">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-1 col-md-0" />
-            <div className="col-lg-10 col-md-12">
-              {idea &&
-                <div className="main-post">
-                  <div className="post-top-area">
-                    <h5 className="pre-title">Nest React Blog</h5>
-                    <h3 className="title">
-                      <span>
-                        <b>{idea.title}</b>
-                      </span>
-                    </h3>
+    <div className={'page-wrapper'}>
+        {idea &&
+          <div className={"col-md-12 form-wrapper"}>
+            <h2> View Idea  </h2>
+            <br/>
+              <div className="form-group col-md-12">
+                <label htmlFor="title" className="form-control"> <b>Title:</b> {idea.title} </label>
+              </div>
 
-                    <p className="para">
-                      {idea.body}
-                    </p>
-                  </div>
-                </div>              
-              }
-            </div>
-
+              <div className="form-group col-md-12">
+                <label  className="form-control" htmlFor="description"> <b>Description:</b> {idea.body} </label>
+              </div>
           </div>
-        </div>
-      </section>
+        }
+      </div>
     );
 }
 

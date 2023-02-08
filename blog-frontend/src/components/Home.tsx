@@ -51,10 +51,6 @@ function Home():JSX.Element {
                     <img src="https://res.cloudinary.com/yemiwebby-com-ng/image/upload/v1563149789/blog-image_psvipq.jpg" alt="Blog" />
                   </div>
 
-                  <span className="avatar">
-                    <img src="http://res.cloudinary.com/yemiwebby-com-ng/image/upload/v1513770253/WEB_FREAK_50PX-01_yaqxg7.png" alt="Profile" />
-                  </span>
-
                   <div className="blog-info">
 
                     <h4 className="title">
@@ -67,18 +63,18 @@ function Home():JSX.Element {
 
                 <ul className="post-footer">
                   <li>
-                    <Link to={`/idea/${idea._id}`} className="btn btn-sm btn-outline-secondary">View Post </Link>
+                    <Link to={`/idea/${idea._id}`} className="btn btn-sm btn-outline-secondary">View Idea </Link>
                   </li>
                   <li>
                     {
                       isAuthenticated && (user?.name === idea.author) &&
-                      <Link to={`/edit/${idea._id}`} className="btn btn-sm btn-outline-secondary">Edit Post </Link>
+                      <Link to={`/edit/${idea._id}`} className="btn btn-sm btn-outline-secondary">Edit Idea </Link>
                     }
                   </li>
                   <li>
                     {
                       isAuthenticated && (user?.name === idea.author) &&
-                      <button className="btn btn-sm btn-outline-secondary" onClick={() => deleteIdea(idea._id)}>Delete Post</button>
+                      <button className="btn btn-sm btn-outline-secondary" onClick={() => deleteIdea(idea._id)}>Delete Idea</button>
                     }
                   </li>
                 </ul>

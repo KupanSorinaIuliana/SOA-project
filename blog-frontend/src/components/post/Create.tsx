@@ -74,10 +74,10 @@ function Create(): JSX.Element {
   return (
     <div>
     <div className={"col-md-12 form-wrapper"}>
-      <h2> Create Post </h2>
+      <h2> Create Idea </h2>
       {!submitSuccess && (
         <div className="alert alert-info" role="alert">
-          Fill the form below to create a new post
+          Fill the form below to create a new idea
                 </div>
       )}
 
@@ -110,7 +110,7 @@ function Create(): JSX.Element {
 
         <div className="form-group col-md-4 pull-right">
           <button className="btn btn-success" type="submit">
-            Create Post
+            Create Idea
           </button>
           {loading &&
             <span className="fa fa-circle-o-notch fa-spin" />

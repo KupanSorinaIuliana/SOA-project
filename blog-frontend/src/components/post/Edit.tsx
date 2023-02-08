@@ -70,11 +70,11 @@ function Edit(): JSX.Element {
     <div className={'page-wrapper'}>
     {idea &&
       <div className={"col-md-12 form-wrapper"}>
-        <h2> Edit Post  </h2>
+        <h2> Edit Idea  </h2>
 
         {submitSuccess && (
           <div className="alert alert-info" role="alert">
-            The post has been edited successfully!
+            The idea has been edited successfully!
                         </div>
         )}
         <form id={"create-post-form"} onSubmit={handleFormSubmission} noValidate={true}>
@@ -95,7 +95,7 @@ function Edit(): JSX.Element {
 
           <div className="form-group col-md-4 pull-right">
             <button className="btn btn-success" type="submit">
-              Edit Post
+              Edit Idea
             </button>
             {loading &&
               <span className="fa fa-circle-o-notch fa-spin" />
