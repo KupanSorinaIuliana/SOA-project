@@ -47,8 +47,8 @@ constructor(private ideaTrackerService: IdeaTrackerService) { }
       }
 
   // Fetch a particular idea using ID
-  @Get('idea/:ideaID')
-  async getIdea(@Res() res, @Param('ideaID', new ValidateObjectId()) ideaID) {
+  @Get('idea')
+  async getIdea(@Res() res, @Query('ideaID', new ValidateObjectId()) ideaID) {
     const idea = await this.ideaTrackerService.getIdea(ideaID);
     if (!idea) {
         throw new NotFoundException('Idea does not exist!');
