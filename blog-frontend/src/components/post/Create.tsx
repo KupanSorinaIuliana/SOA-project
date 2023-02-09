@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter, useHistory } from 'react-router-dom';
-//import { useAuth0 } from '../../contexts/auth0-context';
 import { useAuth0 } from "@auth0/auth0-react";
 
 function Create(): JSX.Element {
