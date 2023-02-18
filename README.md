@@ -17,7 +17,7 @@ $ yarn start
 ## Authorization
 The authorization of the project was done using [Auth0](https://manage.auth0.com).
 
-The implementation was done using the instructions presented at: [Ayth0-react](https://auth0.com/docs/quickstart/spa/react/interactive).
+The implementation was done using the instructions presented at: [Auth0-react](https://auth0.com/docs/quickstart/spa/react/interactive).
 
 ## API project structure
 - The api project was built using nest js.
@@ -32,3 +32,6 @@ The implementation was done using the instructions presented at: [Ayth0-react](h
 ## Database
 - The database used is Mongo DB.
 - The database is deployed in Mongo DB Atlas.
+
+## 3rd party services
+- Open weather map api [OpenWeatherApi](https://openweathermap.org/appid).
